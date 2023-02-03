@@ -27,4 +27,9 @@ class Movie{
         return $this->title;
     }
 
+    public function __toString()
+    {
+        return $this->genre;
+    }
+
 }

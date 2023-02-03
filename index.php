@@ -19,12 +19,12 @@
         </h1>
         <?php 
             //istanziare almeno due oggetti 'Movie' e stampare a schermo i valori delle relative proprietà
-            $movie1 = new Movie('Pan\'s Labyrinth', 'spanish', new GenreList('dark fantasy','horror'), 'Guillermo Del Toro', '120 minutes');
+            $pansLabyrinth = new Movie('Pan\'s Labyrinth', 'spanish', new GenreList('dark fantasy','horror'), 'Guillermo Del Toro', '120 minutes');
 
-            $movie2 = new Movie('The Pale Blue Eye', 'english', new GenreList('mystery', 'thriller'), 'Scott Cooper', '128 minutes');
+            $thePaleBlueEye = new Movie('The Pale Blue Eye', 'english', new GenreList('mystery', 'thriller'), 'Scott Cooper', '128 minutes');
 
-            var_dump($movie1);
-            var_dump($movie2);
+            var_dump($pansLabyrinth);
+            var_dump($thePaleBlueEye);
         ?>
         
         <h2>
@@ -33,34 +33,54 @@
 
         <h3>
             <?php 
-                echo $movie1->getTitle();
+                echo $pansLabyrinth->getTitle();
             ?>
         </h3>
         <p>
             <?php
+                foreach ($pansLabyrinth as $key=>$value) {
+                    if ($key === 'genre') {
+                        foreach ($value as $keyGenre => $valueGenre) {
+                            echo "$keyGenre => $valueGenre </br>";
+                        }
+                    }
 
-                /*foreach ($movie2 as $key=>$value) {
-                    echo "$key => $value </br>";
-                }*/
+                    else {
+                       echo "$key => $value </br>"; 
+                    }
+                }
 
-               print_r ($movie1);
+                //print_r ($pansLabyrinth);
+
             ?>
         </p>
         
         <h3>
             <?php 
-                echo $movie2->getTitle();
+                echo $thePaleBlueEye->getTitle();
             ?>
         </h3>
 
         <p>
             <?php 
 
-                /*foreach ($movie2 as $key=>$value) {
+                foreach ($thePaleBlueEye as $key=>$value) {
+                    if ($key === 'genre') {
+                        foreach ($value as $keyGenre => $valueGenre) {
+                            echo "$keyGenre => $valueGenre </br>";
+                        }
+                    }
+
+                    else {
+                    echo "$key => $value </br>"; 
+                    }
+                }
+
+                /*foreach ($thepaleBlueEye as $key=>$value) {
                     echo "$key => $value </br>";
                 }*/
 
-                print_r ($movie2);
+                //print_r ($thePaleBlueEye);
             ?>
         </p>
 
