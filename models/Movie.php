@@ -12,7 +12,7 @@ class Movie{
     public $runningTime;
 
     //definire un costruttore all'interno della classe
-    public function __construct($_title, $_language, $_genre, $_director, $_runningTime){
+    public function __construct($_title, $_language, GenreList $_genre, $_director, $_runningTime){
         $this->title = $_title;
         $this->language = $_language;
         $this->genre = $_genre;
@@ -22,7 +22,7 @@ class Movie{
 
     //inserire un metodo -> capacità condivisa
     public function getTitle(){
-        
+
         // ritorno il titolo del film
         return $this->title;
     }

@@ -1,6 +1,7 @@
 
 <?php
     require_once __DIR__ . '/models/Movie.php';
+    require_once __DIR__ . '/models/GenreList.php'
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +19,12 @@
         </h1>
         <?php 
             //istanziare almeno due oggetti 'Movie' e stampare a schermo i valori delle relative proprietà
-            $movie1 = new Movie('Pan\'s Labyrinth', 'spanish', 'dark fantasy', 'Guillermo Del Toro', '120 minutes');
+            $movie1 = new Movie('Pan\'s Labyrinth', 'spanish', new GenreList('dark fantasy','horror'), 'Guillermo Del Toro', '120 minutes');
 
-            $movie2 = new Movie('The Pale Blue Eye', 'english', 'mystery thriller', 'Scott Cooper', '128 minutes');
+            $movie2 = new Movie('The Pale Blue Eye', 'english', new GenreList('mystery', 'thriller'), 'Scott Cooper', '128 minutes');
 
-            //var_dump($movie1)
+            var_dump($movie1);
+            var_dump($movie2);
         ?>
         
         <h2>
@@ -37,9 +39,11 @@
         <p>
             <?php
 
-                foreach ($movie1 as $key=>$value) {
+                /*foreach ($movie2 as $key=>$value) {
                     echo "$key => $value </br>";
-                }
+                }*/
+
+               print_r ($movie1);
             ?>
         </p>
         
@@ -52,9 +56,11 @@
         <p>
             <?php 
 
-                foreach ($movie2 as $key=>$value) {
+                /*foreach ($movie2 as $key=>$value) {
                     echo "$key => $value </br>";
-                }
+                }*/
+
+                print_r ($movie2);
             ?>
         </p>
 
